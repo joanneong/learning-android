@@ -4,7 +4,52 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimaryLight"
     android:orientation="horizontal"
     tools:context=".MainActivity">
 
+    <fragment
+        android:id="@+id/listFrag"
+        android:name="com.example.fragmentsrecyclerviewchallenge.ListFrag"
+        android:layout_width="200dp"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout="@layout/fragment_list" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/listFrag"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <fragment
+            android:id="@+id/actionFrag"
+            android:name="com.example.fragmentsrecyclerviewchallenge.ActionFrag"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            tools:layout="@layout/fragment_action" />
+
+        <fragment
+            android:id="@+id/carInfoFrag"
+            android:name="com.example.fragmentsrecyclerviewchallenge.CarInfoFrag"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            tools:layout="@layout/fragment_car_info" />
+
+        <fragment
+            android:id="@+id/ownerInfoFrag"
+            android:name="com.example.fragmentsrecyclerviewchallenge.OwnerInfoFrag"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            tools:layout="@layout/fragment_owner_info" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,14 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ActionFrag">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <Button
+        android:id="@+id/btnCarInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="10dp"
+        android:background="@color/colorPrimary"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:layout_weight="1"
+        android:text="@string/car_info" />
 
-</FrameLayout>
+    <Button
+        android:id="@+id/btnOwnerInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="10dp"
+        android:background="@color/colorPrimary"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:layout_weight="1"
+        android:text="@string/owner_info" />
+</LinearLayout>
