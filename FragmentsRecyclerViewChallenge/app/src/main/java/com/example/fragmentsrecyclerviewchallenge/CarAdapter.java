@@ -18,9 +18,15 @@ public class CarAdapter extends RecyclerView.Adapter<CarAdapter.ViewHolder> {
     public static final String NISSAN = "Nissan";
 
     ArrayList<Car> cars;
+    ItemClicked activity;
+
+    public interface ItemClicked {
+        void onItemClicked(int index);
+    }
 
     public CarAdapter(Context context, ArrayList<Car> list) {
         cars = list;
+        activity = (ItemClicked) context;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
@@ -33,6 +39,14 @@ public class CarAdapter extends RecyclerView.Adapter<CarAdapter.ViewHolder> {
             ivMake = itemView.findViewById(R.id.ivMake);
             tvModel = itemView.findViewById(R.id.tvModel);
             tvOwner = itemView.findViewById(R.id.tvOwner);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    activity.onItemClicked(cars.indexOf(view.getTag()));
+                }
+            });
+            activity.onItemClicked(0);
         }
     }
 
@@ -53,7 +67,7 @@ public class CarAdapter extends RecyclerView.Adapter<CarAdapter.ViewHolder> {
             holder.ivMake.setImageResource(R.drawable.volkswagen);
         } else if (make.equals(MERCEDES)) {
             holder.ivMake.setImageResource(R.drawable.mercedes);
-        } else {
+        } else if (make.equals(NISSAN)) {
             holder.ivMake.setImageResource(R.drawable.nissan);
         }
 

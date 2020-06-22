@@ -6,10 +6,12 @@ import androidx.fragment.app.FragmentManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements CarAdapter.ItemClicked {
 
     Button btnCarInfo, btnOwnerInfo;
+    TextView tvOwnerInfo, tvOwnerTel;
 
     FragmentManager fragmentManager;
 
@@ -26,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
 
         btnCarInfo = findViewById(R.id.btnCarInfo);
         btnOwnerInfo = findViewById(R.id.btnOwnerInfo);
+        tvOwnerInfo = findViewById(R.id.tvOwnerInfo);
+        tvOwnerTel = findViewById(R.id.tvOwnerTel);
 
         btnCarInfo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,7 +50,11 @@ public class MainActivity extends AppCompatActivity {
                         .commit();
             }
         });
+    }
 
-
+    @Override
+    public void onItemClicked(int index) {
+        tvOwnerInfo.setText(ApplicationClass.cars.get(index).getOwner());
+        tvOwnerTel.setText(ApplicationClass.cars.get(index).getOwnerTel());
     }
 }
