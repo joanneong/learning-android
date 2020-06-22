@@ -46,7 +46,6 @@ public class CarAdapter extends RecyclerView.Adapter<CarAdapter.ViewHolder> {
                     activity.onItemClicked(cars.indexOf(view.getTag()));
                 }
             });
-            activity.onItemClicked(0);
         }
     }
 

@@ -57,6 +57,8 @@ public class MainActivity extends AppCompatActivity implements CarAdapter.ItemCl
                         .commit();
             }
         });
+
+        onItemClicked(0);
     }
 
     @Override
