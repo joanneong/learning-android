@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">DataTextFiles</string>
+    <string name="enter_name">enter name</string>
+    <string name="enter_surname">enter surname</string>
+    <string name="add">Add</string>
+    <string name="save_data_to_file">Save data to file</string>
+</resources>
